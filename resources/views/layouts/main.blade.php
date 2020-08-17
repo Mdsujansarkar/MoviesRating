@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset("css/tailwind.min.css")}}" />
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
         <title>Laravel</title>
-        
+        <livewire:styles />
     </head>
     <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800">
@@ -25,16 +26,10 @@
                     <a href="" class="hover:text-gray-300">Actors</a>
                 </li>
         </ul>
-        <div class="flex flex-col md:flex-row items-center">
-                <div class="md:ml-4 mt-3 md:mt-0">
-                    <a href="#">
-                        <input type="text">
-                    </a>
-                </div>
-            </div>
-    </div>
+        <livewire:search-dropdown>
     {{-- Nav goes heare --}}
     </nav>
         @yield('content')
+        <livewire:scripts />
     </body>
 </html>
