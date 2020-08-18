@@ -40,6 +40,7 @@
                       
                     </div>
                 </div>
+                 <div x-data="{ isOpen: false }">
                 @if(count($movie['videos']['results']) > 0)
                   <div class="mt-12">
                             <button
@@ -50,6 +51,7 @@
                                 <span class="ml-2">Play Trailer</span>
                             </button>
                         </div>
+                         <template x-if="isOpen">
                         <div style="background-color: rgba(0, 0, 0, .5);" class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
                                 <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
                                     <div class="bg-gray-900 rounded">
@@ -68,7 +70,9 @@
                                     </div>
                                 </div>
                             </div>
+                             </template>
                  @endif
+            </div>
             </div>
         </div>
     </div> <!-- end movie-info -->
